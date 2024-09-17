@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markerless AR.js with GLB Model</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; videoTexture: true;">
+        <!-- Add the GLB model -->
+        <a-assets>
+            <a-asset-item id="myModel" src="./Ioniq5_Master_Model.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- Define the markerless scene where the model will appear -->
+        <a-entity gltf-model="#myModel" scale="1 1 1" position="0 0 -5" rotation="0 0 0">
+        </a-entity>
+
+        <!-- Camera and AR setup -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
